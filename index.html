@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kannan A - Data Engineer & Developer</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -142,10 +142,11 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
-            padding: 10rem 5% 4rem;
+            padding: 6rem 5% 3rem;
+            min-height: auto;
             position: relative;
         }
 
@@ -161,20 +162,22 @@
 
         .hero-content {
             animation: fadeInUp 0.8s ease 0.2s both;
+            max-width: 700px;
         }
 
         .hero-image-container {
             position: relative;
             animation: fadeInUp 0.8s ease 0.4s both;
+            width:100%;
         }
 
         .hero-image-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
+            width: clamp(220px, 30vw, 420px);
             aspect-ratio: 1;
             margin: 0 auto;
         }
+
+
 
         .hero-image-wrapper::before {
             content: '';
@@ -188,6 +191,46 @@
             z-index: 1;
             animation: borderPulse 3s ease-in-out infinite;
         }
+
+        @media (max-width: 768px) {
+
+            .hero-container {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;        
+                align-items: center;   /* THIS centers everything */
+                text-align: center;
+            }
+
+            .hero-image-container {
+                order: -1; /* image on top (premium look) */
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                width: 260px;
+                max-width: 80vw;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .hero-content {
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+        }
+
+
 
         @keyframes borderPulse {
             0%, 100% { 
@@ -777,7 +820,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="hero-container">
             <div class="hero-content">
                 <span class="hero-tag">DATA ENGINEER & DEVELOPER</span>
@@ -800,7 +843,7 @@
                     <!-- Then modify the link: change '/file/d/FILE_ID/view' to '/uc?export=view&id=FILE_ID' -->
                     
                     <!-- OPTION 1: When you have the image - uncomment and add your link -->
-                    <img src="./profile.jpg" alt="Kannan A" class="profile-image">
+                    <img src="./images/profile.jpg" alt="Kannan A" class="profile-image">
                     
                     <!-- OPTION 2: Placeholder - remove this when you add your image -->
                     <!-- <div class="profile-image-placeholder">KA</div> -->
@@ -972,7 +1015,7 @@
                         <span class="tech-tag">Geolocation</span>
                         <span class="tech-tag">Data Integration</span>
                     </div>
-                    <a href="#" class="project-link">View Details →</a>
+                    <a href="https://potholememer.pages.dev/" class="project-link" target="_blank">View Project →</a>
                 </div>
 
                 <div class="project-card fade-in">
@@ -988,7 +1031,7 @@
                         <span class="tech-tag">Collaborative Filtering</span>
                         <span class="tech-tag">StreamLit</span>
                     </div>
-                    <a href="#" class="project-link">View Details →</a>
+                    <a href="https://github.com/KANNAN-APPADURAI/Recommondation-system-with-Streamlit" target="_blank" class="project-link">View Details →</a>
                 </div>
 
                 <div class="project-card fade-in">
@@ -1004,7 +1047,7 @@
                         <span class="tech-tag">MediaPipe</span>
                         <span class="tech-tag">StreamLit</span>
                     </div>
-                    <a href="#" class="project-link">View Details →</a>
+                    <a href="https://github.com/KANNAN-APPADURAI/Facial-Emotion-Recognition-with-Streamlit" target="_blank" class="project-link">View Details →</a>
                 </div>
             </div>
         </div>
@@ -1023,8 +1066,8 @@
                 <div class="contact-info fade-in">
                     <h3>Let's work together</h3>
                     <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
-                        I'm currently open to new opportunities in data engineering, backend development, and cloud infrastructure. 
-                        Feel free to reach out if you'd like to discuss projects, job opportunities, or just connect!
+                        I’m currently working as a Software Development Engineer with a focus on data engineering, backend systems, and cloud infrastructure.
+                        Feel free to reach out to discuss projects, technology, collaborations, or professional connections.
                     </p>
                 </div>
 
@@ -1059,7 +1102,22 @@
                             <div style="font-size: 0.9rem; color: var(--text-secondary);">LinkedIn</div>
                             <div>linkedin.com/in/Kannan-Appadurai</div>
                         </div>
+                    <a href="./assets/Kannan_resume.pdf" target="_blank" class="contact-link">
+                        <span class="contact-icon">📄</span>
+                        <div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Resume</div>
+                            <div>View Resume</div>
+                        </div>
                     </a>
+
+                    <a href="./assets/Kannan_resume.pdf" download class="contact-link">
+                        <span class="contact-icon">⬇</span>
+                        <div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Resume</div>
+                            <div>Download Resume</div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
         </div>
